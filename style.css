@@ -48,6 +48,27 @@ body {
 
 }
 
+.note {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+mjx-container {
+    text-align: center;
+    display: block;
+    margin: 20px 0; /* Adjust spacing around equations */
+    word-wrap: break-word;      /* Force long equations to wrap */
+}
+
+.align-equation {
+    text-align: center;
+    display: block;
+}
+
+/* mjx-container[jax="SVG"] {
+    overflow: visible !important;
+} */
 
 /* Media query for mobile view */
 @media (max-width: 768px) {
@@ -171,10 +192,18 @@ body {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* overflow-x: hidden; */
+    /* Ensure content wraps instead of overflowing */
+    word-wrap: break-word;      /* Break long words */
+    overflow-wrap: break-word;  /* Safeguard for word breaks */
+    white-space: normal;        /* Allow text and elements to wrap */
+    
+    overflow-x: hidden;
 }
 
-p{
+p {
     line-height: 2.0;
+    word-wrap: break-word;
 }
 
 h1,
@@ -320,6 +349,7 @@ code:not([class*="language-"]) {
 }
 
 .copy-button {
+    height: fit-content;
     position: sticky;
     top: 0px;
     right: 0px;
@@ -335,6 +365,7 @@ code:not([class*="language-"]) {
     /* Ensure it stays above the content of the pre block */
     pointer-events: auto;
     /* Ensure the button is clickable */
+    
 }
 
 .copy-button i {
